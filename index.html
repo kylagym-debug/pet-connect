@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐾 PetConnect</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css3">
+</head>
+<body>
+
+<!-- HOME PAGE -->
+<div id="home-page">
+    <h1>🐾 PetConnect</h1>
+    <p class="subtitle">Find pets. Find homes. Reunite families.</p>
+
+    <div class="home-options">
+        <div class="card-option" onclick="showMain('adoption')">
+            🐾 Adoption
+        </div>
+        <div class="card-option" onclick="showMain('lost')">
+            🔍 Lost & Found
+        </div>
+    </div>
+</div>
+
+<!-- ADOPTION PAGE -->
+<div id="adoption-page" class="hidden">
+
+    <button class="back-btn" onclick="goHome()">← Back</button>
+
+    <h2>Adoption</h2>
+
+    <div class="home-options">
+        <div class="card-option" onclick="showAdoption('animal')">
+            Add Animal
+        </div>
+        <div class="card-option" onclick="showAdoption('owner')">
+            Add Owner
+        </div>
+    </div>
+
+    <!-- ANIMAL FORM -->
+    <section id="animal-form" class="hidden">
+        <form onsubmit="submitAdoptionAnimalProfile(event)">
+            <input type="text" id="animal-name" placeholder="Animal Name" required>
+
+            <select id="animal-type">
+                <option>Dog</option>
+                <option>Cat</option>
+            </select>
+
+            <div id="animal-characteristics">
+                <label><input type="checkbox" value="Friendly"> Friendly</label>
+                <label><input type="checkbox" value="Energetic"> Energetic</label>
+                <label><input type="checkbox" value="Calm"> Calm</label>
+                <label><input type="checkbox" value="Playful"> Playful</label>
+            </div>
+
+            <button type="submit">Create Animal Profile</button>
+        </form>
+    </section>
+
+    <!-- OWNER FORM -->
+    <section id="owner-form" class="hidden">
+        <form onsubmit="submitOwnerProfile(event)">
+            <input type="text" id="owner-name" placeholder="Owner Name" required>
+
+            <select id="dream-characteristics" multiple>
+                <option>Friendly</option>
+                <option>Energetic</option>
+                <option>Calm</option>
+                <option>Playful</option>
+            </select>
+
+            <button type="submit">Create Owner Profile</button>
+        </form>
+    </section>
+
+    <button onclick="matchProfiles()">Find Matches</button>
+    <div id="adoption-results"></div>
+
+</div>
+
+<!-- LOST & FOUND PAGE -->
+<div id="lost-page" class="hidden">
+
+    <button class="back-btn" onclick="goHome()">← Back</button>
+
+    <h2>Lost & Found</h2>
+
+    <div class="home-options">
+        <div class="card-option" onclick="showLost('missing')">
+            Report Missing Dog
+        </div>
+        <div class="card-option" onclick="showLost('found')">
+            Report Found Dog
+        </div>
+    </div>
+
+    <!-- MISSING DOG FORM -->
+    <section id="missing-form" class="hidden">
+        <form onsubmit="submitMissingDogProfile(event)">
+            <input type="text" id="missing-dog-name" placeholder="Dog Name" required>
+
+            <select id="missing-dog-color">
+                <option>Black</option>
+                <option>Brown</option>
+                <option>White</option>
+            </select>
+
+            <button type="submit">Report Missing Dog</button>
+        </form>
+    </section>
+
+    <!-- FOUND DOG FORM -->
+    <section id="found-form" class="hidden">
+        <form onsubmit="submitFoundDogProfile(event)">
+            <select id="found-dog-color">
+                <option>Black</option>
+                <option>Brown</option>
+                <option>White</option>
+            </select>
+
+            <button type="submit">Report Found Dog</button>
+        </form>
+    </section>
+
+    <button onclick="matchDogProfiles()">Find Matches</button>
+    <div id="lost-results"></div>
+
+</div>
+
+<!-- JS -->
+<script src="script.js"></script>
+</body>
+</html>
