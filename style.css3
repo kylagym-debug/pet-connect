@@ -1,4 +1,4 @@
-/* Reset & fonts */
+/* RESET */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,160 +6,170 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* Hide sections initially */
+/* BODY */
+body {
+    background: linear-gradient(135deg, #667eea, #f093fb);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* PAGE WRAPPER */
+#home-page,
+#adoption-page,
+#lost-page {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+/* SHOW HOME FIRST */
+#home-page {
+    display: flex;
+}
+
+/* TITLE */
+h1 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: white;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+}
+
+/* OPTION CARDS */
+.home-options {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-option {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    width: 220px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card-option:hover {
+    transform: translateY(-8px) scale(1.05);
+}
+
+/* INNER PAGES */
+#adoption-page,
+#lost-page {
+    background: white;
+    min-height: 85vh;
+    justify-content: flex-start;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 650px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+/* BACK BUTTON */
+.back-btn {
+    align-self: flex-start;
+    margin-bottom: 20px;
+    background: none;
+    color: #667eea;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+/* HEADINGS */
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* FORMS */
+section {
+    margin-top: 20px;
+    width: 100%;
+}
+
+form {
+    margin-top: 15px;
+}
+
+/* INPUTS */
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    transition: 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: #667eea;
+    outline: none;
+}
+
+/* CHECKBOX GRID */
+#animal-characteristics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#animal-characteristics label {
+    background: #f5f7ff;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* BUTTONS */
+button {
+    margin-top: 15px;
+    padding: 12px;
+    width: 100%;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.03);
+}
+
+/* RESULTS */
+#adoption-results,
+#lost-results {
+    margin-top: 20px;
+    text-align: left;
+}
+
+/* HIDE EVERYTHING FIRST */
+#home-page,
 #adoption-page,
 #lost-page,
 #animal-form,
 #owner-form,
 #missing-form,
 #found-form {
-    display: none;
-}
-
-body {
-    background: #f0f4f8;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-}
-
-/* Home Page */
-#home-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 40px;
-}
-
-#home-page h1 {
-    font-size: 3rem;
-    color: #4a90e2;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: #555;
-}
-
-/* Card options */
-.home-options {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.card-option {
-    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
-    padding: 25px 40px;
-    border-radius: 15px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #fff;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    text-align: center;
-}
-
-.card-option:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-
-/* Back button */
-.back-btn {
-    margin-bottom: 15px;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: #ff7f50;
-    color: white;
-    font-weight: 600;
-}
-
-.back-btn:hover {
-    background-color: #ff6347;
-}
-
-/* Section headers */
-h2 {
-    color: #4a90e2;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Forms */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    max-width: 400px;
-    margin: 0 auto 20px auto;
-}
-
-input, select, button {
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    font-size: 1rem;
-}
-
-/* Checkboxes */
-#animal-characteristics label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Buttons */
-button {
-    background: linear-gradient(135deg, #4a90e2, #6ec6ff);
-    color: white;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-button:hover {
-    transform: scale(1.03);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-/* Results */
-#adoption-results, #lost-results {
-    margin-top: 20px;
-}
-
-.match-profile {
-    background: #ffffff;
-    border-left: 6px solid #4a90e2;
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 15px;
-    max-width: 400px;
-}
-
-/* Flow connectors */
-.flow-connector {
-    width: 4px;
-    height: 40px;
-    background: #4a90e2;
-    margin: 10px auto;
-}
-
-/* Page sections */
-.hidden {
     display: none;
 }
