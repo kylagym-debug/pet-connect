@@ -61,12 +61,12 @@
         <form onsubmit="submitOwnerProfile(event)">
             <input type="text" id="owner-name" placeholder="Owner Name" required>
 
-            <select id="dream-characteristics" multiple>
-                <option>Friendly</option>
-                <option>Energetic</option>
-                <option>Calm</option>
-                <option>Playful</option>
-            </select>
+            <div id="dream-characteristics">
+                <label><input type="checkbox" value="Friendly"> Friendly</label>
+                <label><input type="checkbox" value="Energetic"> Energetic</label>
+                <label><input type="checkbox" value="Calm"> Calm</label>
+                <label><input type="checkbox" value="Playful"> Playful</label>
+            </div>
 
             <button type="submit">Create Owner Profile</button>
         </form>
@@ -96,6 +96,21 @@
                 <option>White</option>
             </select>
 
+        <input type="file" id="missing-dog-picture" accept="image/*">
+            
+        <select id="missing-dog-size">
+            <option value="">Select Size</option>
+            <option>Small</option>
+            <option>Medium</option>
+            <option>Large</option>
+        </select>
+
+
+        <input type="text" id="missing-dog-breed" placeholder="Breed (optional)">
+
+
+        <input type="text" id="missing-dog-standout" placeholder="Notable features (spots, collar, etc.)">            
+            
             <button type="submit">Report Missing Dog</button>
         </form>
     </section>
@@ -107,7 +122,24 @@
                 <option>Brown</option>
                 <option>White</option>
             </select>
+            
 
+        <input type="file" id="found-dog-picture" accept="image/*">
+
+                    
+        <select id="found-dog-size">
+            <option value="">Select Size</option>
+            <option>Small</option>
+            <option>Medium</option>
+            <option>Large</option>
+        </select>
+
+       
+        <input type="text" id="found-dog-breed" placeholder="Breed (optional)">
+
+        
+        <input type="text" id="found-dog-standout" placeholder="Notable features (spots, collar, etc.)">
+            
             <button type="submit">Report Found Dog</button>
         </form>
     </section>
