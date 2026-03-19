@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🐾 PetConnect</title>
+    <title>PetConnect</title>
 
-    <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css3">
 </head>
+
 <body>
 
-<!-- HOME PAGE -->
 <div id="home-page">
     <h1>🐾 PetConnect</h1>
     <p class="subtitle">Find pets. Find homes. Reunite families.</p>
@@ -22,30 +20,24 @@
         <div class="card-option" onclick="showMain('adoption')">
             🐾 Adoption
         </div>
+
         <div class="card-option" onclick="showMain('lost')">
             🔍 Lost & Found
         </div>
     </div>
 </div>
 
-<!-- ADOPTION PAGE -->
-<div id="adoption-page" class="hidden">
-
+<div id="adoption-page">
     <button class="back-btn" onclick="goHome()">← Back</button>
 
     <h2>Adoption</h2>
 
     <div class="home-options">
-        <div class="card-option" onclick="showAdoption('animal')">
-            Add Animal
-        </div>
-        <div class="card-option" onclick="showAdoption('owner')">
-            Add Owner
-        </div>
+        <div class="card-option" onclick="showAdoption('animal')">Add Animal</div>
+        <div class="card-option" onclick="showAdoption('owner')">Add Owner</div>
     </div>
 
-    <!-- ANIMAL FORM -->
-    <section id="animal-form" class="hidden">
+    <section id="animal-form">
         <form onsubmit="submitAdoptionAnimalProfile(event)">
             <input type="text" id="animal-name" placeholder="Animal Name" required>
 
@@ -65,8 +57,7 @@
         </form>
     </section>
 
-    <!-- OWNER FORM -->
-    <section id="owner-form" class="hidden">
+    <section id="owner-form">
         <form onsubmit="submitOwnerProfile(event)">
             <input type="text" id="owner-name" placeholder="Owner Name" required>
 
@@ -83,27 +74,19 @@
 
     <button onclick="matchProfiles()">Find Matches</button>
     <div id="adoption-results"></div>
-
 </div>
 
-<!-- LOST & FOUND PAGE -->
-<div id="lost-page" class="hidden">
-
+<div id="lost-page">
     <button class="back-btn" onclick="goHome()">← Back</button>
 
     <h2>Lost & Found</h2>
 
     <div class="home-options">
-        <div class="card-option" onclick="showLost('missing')">
-            Report Missing Dog
-        </div>
-        <div class="card-option" onclick="showLost('found')">
-            Report Found Dog
-        </div>
+        <div class="card-option" onclick="showLost('missing')">Report Missing Dog</div>
+        <div class="card-option" onclick="showLost('found')">Report Found Dog</div>
     </div>
 
-    <!-- MISSING DOG FORM -->
-    <section id="missing-form" class="hidden">
+    <section id="missing-form">
         <form onsubmit="submitMissingDogProfile(event)">
             <input type="text" id="missing-dog-name" placeholder="Dog Name" required>
 
@@ -117,8 +100,7 @@
         </form>
     </section>
 
-    <!-- FOUND DOG FORM -->
-    <section id="found-form" class="hidden">
+    <section id="found-form">
         <form onsubmit="submitFoundDogProfile(event)">
             <select id="found-dog-color">
                 <option>Black</option>
@@ -132,10 +114,9 @@
 
     <button onclick="matchDogProfiles()">Find Matches</button>
     <div id="lost-results"></div>
-
 </div>
 
-<!-- JS -->
 <script src="script.js"></script>
+
 </body>
 </html>
